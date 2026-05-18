@@ -70,8 +70,8 @@ public function create()
         if(Sentinel::hasAccess('document-types.create')){
 
             $data['setting'] = defaultSetting();
-            
-            $data['publish_options'] = $this->commonDataManager->publishStatusDropdown();  
+
+            $data['publish_options'] = $this->commonDataManager->publishStatusDropdown();
             return view('site_modules.document_types.create',compact('data'));
         } else{
             return redirect()->route('dashboard')->with('error','Oops! Permissions denied.');
@@ -96,7 +96,7 @@ public function store(DocumentTypeRequest $request)
 
         if(Sentinel::hasAccess('document-types.store')){
             DB::beginTransaction();
-            $documentTypeDetails = $request->only('title','order','status');
+            $documentTypeDetails = $request->only('title', 'title_ne', 'order','status');
             $documentTypeDetails['slug'] = Str::slug($request->title);
 
             if($request->hasFile('image')){
@@ -154,15 +154,15 @@ public function edit($document_type_id)
         if(Sentinel::hasAccess('document-types.edit')){
 
             $data['setting'] = defaultSetting();
-            
-            $data['publish_options'] = $this->commonDataManager->publishStatusDropdown();  
+
+            $data['publish_options'] = $this->commonDataManager->publishStatusDropdown();
             $document_type = DocumentType::find($document_type_id);
             return view('site_modules.document_types.edit',compact('data','document_type'));
         }else{
             return redirect()->route('dashboard')->with('error','Oops! Permissions denied.');
         }
 
-        
+
     } catch (Exception $e) {
         return redirect()->route('document-types.index')->with('error','Oops! Something went wrong.');
     }
@@ -183,11 +183,11 @@ public function update(DocumentTypeRequest $request, $id)
 
         if(Sentinel::hasAccess('document-types.update')){
             DB::beginTransaction();
-            $documentTypeDetails = $request->only('title','status','order');
+            $documentTypeDetails = $request->only('title','title_ne','status','order');
             $documentTypeDetails['slug'] = Str::slug($request->title);
 
             $document_type = DocumentType::find($id);
-            
+
             $document_type->update($documentTypeDetails);
 
             if($request->hasFile('image')){
@@ -240,7 +240,7 @@ public function destroy($id)
                 File::delete($oldPath);
             }
 
-            $document_type->delete();            
+            $document_type->delete();
             return redirect()->route('document-types.index')->with('success','Operation Successfull');
 
         }else{

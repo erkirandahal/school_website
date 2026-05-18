@@ -23,6 +23,9 @@ class AcademicYearSeeder extends Seeder
             ],
             [
                 'year' => 2082
+            ],
+            [
+                'year' => 2083
             ]
 
         ];

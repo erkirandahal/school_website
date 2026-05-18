@@ -2,7 +2,7 @@
     <legend class="legend-border">Post Category Details</legend>
     <div>
         <div class="col-md-12 form-group">
-            {{ html()->label('Title')->for('title') }} <span>*</span>
+            {{ html()->label('post prakar')->for('title') }} <span>*</span>
 
             {{ html()->text('title')->class('form-control')->placeholder('Title') }}
 

@@ -8,7 +8,7 @@
         <h1>Settings</h1>
         <ol class="breadcrumb">
             <li><a href="{{ route('dashboard') }}"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li class="active">Settings</li>
+            <li class="active">विद्यालयको विवरण</li>
         </ol>
     </section>
 
@@ -18,63 +18,63 @@
             <div class="col-md-6">
                 <div class="box">
                     <div class="box-header with-border">
-                        <h3 class="box-title">Default Settings</h3>
+                        <h3 class="box-title">प्रणालीको विवरण</h3>
                     </div>
                     <div class="box-body">
                         <div class="row form-group">
-                            <label class="col-md-4">Current Year</label>
+                            <label class="col-md-4">हालको आ. ब.</label>
                             <div class="col-md-8">{{ $setting->academicYear->year }}</div>
                         </div>
                         <div class="row form-group">
-                            <label class="col-md-4">Office/Institute</label>
+                            <label class="col-md-4">विद्यालयको नाम</label>
                             <div class="col-md-8">{{ $setting->office }}</div>
                         </div>
                         <div class="row form-group">
-                            <label class="col-md-4">Office/Institute Address</label>
+                            <label class="col-md-4">ठेगाना</label>
                             <div class="col-md-8">{{ $setting->office_address }}</div>
                         </div>
                         <div class="row form-group">
-                            <label class="col-md-4">Municipality</label>
+                            <label class="col-md-4">स्थानीय तह</label>
                             <div class="col-md-8">{{ $setting->municipality }}</div>
                         </div>
                         <div class="row form-group">
-                            <label class="col-md-4">Province Name</label>
+                            <label class="col-md-4">प्रदेश</label>
                             <div class="col-md-8">{{ $setting->province_name }}</div>
                         </div>
                         <div class="row form-group">
-                            <label class="col-md-4">District Name</label>
+                            <label class="col-md-4">जिल्ला</label>
                             <div class="col-md-8">{{ $setting->district_name }}</div>
                         </div>
                         <div class="row form-group">
-                            <label class="col-md-4">Phone</label>
+                            <label class="col-md-4">सम्पर्क नं.</label>
                             <div class="col-md-8">{{ $setting->phone }}</div>
                         </div>
                         <div class="row form-group">
-                            <label class="col-md-4">Email</label>
+                            <label class="col-md-4">इमेल</label>
                             <div class="col-md-8">{{ $setting->email }}</div>
                         </div>
                     </div>
                     <div class="box-footer">
                         <a class="btn btn-primary btn-sm" href="{{ route('settings.edit', $setting->id) }}"> <i
-                                class="fa fa-edit"></i> Edit Setting</a>
+                                class="fa fa-edit"></i> सम्पादन</a>
                     </div>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="box">
                     <div class="box-header with-border">
-                        <h3 class="box-title">System Settings</h3>
+                        <h3 class="box-title">प्रणालीको लोगो</h3>
                     </div>
                     <div class="box-body">
                         <div class="row form-group">
-                            <label class="col-md-4">Logo</label>
+                            <label class="col-md-4">लोगो</label>
                             <div class="col-md-8">
                                 <img class="image img-responsive" src="{{ asset('uploads/setting/' . $setting->logo) }}"
                                     height="100" width="100" alt="LOGO" style="border: 1px solid green;">
                             </div>
                         </div>
                         <div class="row form-group">
-                            <label class="col-md-4">Website main Logo</label>
+                            <label class="col-md-4">प्रणालीको लागि लोगो</label>
                             <div class="col-md-8">
                                 <img class="image img-responsive"
                                     src="{{ asset('uploads/setting/' . $setting->local_logo) }}" height="100"
@@ -90,21 +90,21 @@
                         </div>
 
                         <div class="row form-group">
-                            <label class="col-md-4">system Name</label>
+                            <label class="col-md-4">प्रणालीको नाम</label>
                             <div class="col-md-8">{{ $setting->system_name }}</div>
                         </div>
                         <div class="row form-group">
-                            <label class="col-md-4">System Short Name</label>
+                            <label class="col-md-4">प्रणालीको छोटो नाम</label>
                             <div class="col-md-8">{{ $setting->system_short_name }}</div>
                         </div>
                         <div class="row form-group">
-                            <label class="col-md-4">Tag Line</label>
+                            <label class="col-md-4">नारा</label>
                             <div class="col-md-8">{{ $setting->tag_line }}</div>
                         </div>
                     </div>
                     <div class="box-footer">
                         <a class="btn btn-primary btn-sm" href="{{ route('settings.edit', $setting->id) }}"> <i
-                                class="fa fa-edit"></i> Edit Setting</a>
+                                class="fa fa-edit"></i> सम्पादन</a>
                     </div>
                 </div>
             </div>

@@ -29,7 +29,7 @@
                                             class="img img-responsive img-fluid" width="200">
                                     @endif
                                 </div>
-                                <p class="mt-1 mb-0 official-item-name">{{ $official->first_name }}
+                                <p class="mt-1 mb-0 official-item-name">{{ $official->first_name }} {{ $official->middle_name }}
                                     {{ $official->last_name }}</p>
                                 <h5 class="official-item-designation m-0">{{ $official->designation->name }}</h5>
                                 @if ($official->mobile)

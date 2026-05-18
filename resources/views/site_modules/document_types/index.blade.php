@@ -5,7 +5,7 @@
 @section('content')
     <!-- Content Header (Document Type header) -->
     <section class="content-header">
-        <h1> Document Types</h1>
+        <h1> कागजातको प्रकारहरू</h1>
         <ol class="breadcrumb">
             <li><a href="{{ route('dashboard') }}"><i class="fa fa-dashboard"></i> Dashboard</a></li>
             <li class="active">Document Types</li>
@@ -16,18 +16,18 @@
         <!-- Default box -->
         <div class="box">
             <div class="box-header with-border">
-                <h3 class="box-title">Document Types List</h3>
+                <h3 class="box-title">कागजातको विवरण</h3>
                 <div class="box-tools pull-right">
                     <a class="btn btn-sm btn-success" href="{{ route('document-types.create') }}"> <i
                             class="fa fa-plus"></i>
-                        Add New Document Type
+                        नयाँ थप
                     </a>
                 </div>
             </div>
             <div class="box-body">
                 <div class="row filteration">
                     <div class="col-md-3">
-                        <label for="first_name"> Title </label>
+                        <label for="first_name"> शिर्षक </label>
                         <div class="form-group">
                             <input id="title" name="title" class="form-control" placeholder="Title">
                         </div>
@@ -37,21 +37,21 @@
                         <label for="dob"> Filter</label>
                         <div class="form-group">
                             <button id="search-button" class="btn btn-sm btn-success" type="button"> <i
-                                    class="fa fa-search"></i> search</button>
+                                    class="fa fa-search"></i> खोज्नुहोस</button>
                             <button id="clear-button" class="btn btn-sm btn-danger" type="button"> <i
-                                    class="fa fa-eraser"></i> clear</button>
+                                    class="fa fa-eraser"></i> हटाउने</button>
                         </div>
                     </div>
                 </div>
                 <div id="table-wrapper" class="table-responsive">
                     <table class="table table-bordered table-striped">
                         <thead>
-                            <th>S.No.</th>
-                            <th>Title</th>
-                            <th>Image</th>
-                            <th>Order</th>
-                            <th>Status</th>
-                            <th>Action</th>
+                            <th>क्र.सं.</th>
+                            <th>शीर्षक</th>
+                            <th>तस्बिर</th>
+                            <th>क्रम</th>
+                            <th>स्थिति</th>
+                            <th>कार्य</th>
                         </thead>
                         <tbody>
                             @php $sno = ($document_types->currentPage()==1) ? 1 : ($document_types->currentPage()-1)*$document_types->perPage()+1 ; @endphp

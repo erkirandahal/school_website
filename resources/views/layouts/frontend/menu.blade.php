@@ -12,7 +12,7 @@
                                 @if ($key == 0)
                                     <i class="{{ $item->icon || 'fa fa-home' }}"></i>
                                 @endif
-                                {{ $item->label }}
+                                {{ $item->label_nepali }}
                                 @if ($item->children->count() > 0)
                                     <i class="fa fa-angle-down ms-1"></i>
                                 @endif
@@ -21,7 +21,7 @@
                                 <ul class="submenu">
                                     @foreach ($item->children as $child)
                                         <li>
-                                            <a href="{{ url($child->url) }}">{{ $child->label }}</a>
+                                            <a href="{{ url($child->url) }}">{{ $child->label_nepali }}</a>
                                         </li>
                                     @endforeach
                                 </ul>

@@ -25,7 +25,7 @@ class DocumentTypeRequest extends FormRequest
     {
        $errors = [];
        $errors['title'] = 'required|max:255';
-
+        $errors['title_ne'] = 'required|max:255';
        $errors['image'] = 'sometimes|image|mimes:jpg,png,jpeg,gif|max:5120';
        $errors['order'] = 'required';
        $errors['status'] = 'required';

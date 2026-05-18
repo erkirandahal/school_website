@@ -1,8 +1,8 @@
 <fieldset class="fieldset-border">
-    <legend class="legend-border">Personel Details</legend>
+    <legend class="legend-border">व्यक्तिगत विवरण</legend>
     <div class="row-auto">
         <div class="col-md-4 form-group">
-            {{ html()->label('First Name')->for('first_name') }} <span>*</span>
+            {{ html()->label('पहिलो नाम')->for('first_name') }} <span>*</span>
             {{ html()->text('first_name')->class('form-control')->placeholder('Name') }}
             @error('first_name')
                 <span class="text-danger"><i>{{ $message }}</i></span>
@@ -10,7 +10,7 @@
         </div>
 
         <div class="col-md-4 form-group">
-            {{ html()->label('Middle Name')->for('middle_name') }}
+            {{ html()->label('बिचको नाम')->for('middle_name') }}
             {{ html()->text('middle_name')->class('form-control')->placeholder('Middle Name') }}
             @error('middle_name')
                 <span class="text-danger"><i>{{ $message }}</i></span>
@@ -18,7 +18,7 @@
         </div>
 
         <div class="col-md-4 form-group">
-            {{ html()->label('Last Name')->for('last_name') }} <span>*</span>
+            {{ html()->label('अन्तिम नाम')->for('last_name') }} <span>*</span>
             {{ html()->text('last_name')->class('form-control')->placeholder('Last Name') }}
             @error('last_name')
                 <span class="text-danger"><i>{{ $message }}</i></span>
@@ -26,7 +26,7 @@
         </div>
 
         <div class="col-md-4 form-group">
-            {{ html()->label('DOB (AD)')->for('dob') }} <span>*</span>
+            {{ html()->label('जन्म मिति (A.D.)')->for('dob') }} <span>*</span>
             {{ html()->text('dob')->id('bs_dob')->attribute('data-date-format', 'yyyy-mm-dd')->class('form-control')->placeholder('YYYY-MM-DD') }}
             @error('dob')
                 <span class="text-danger"><i>{{ $message }}</i></span>
@@ -34,7 +34,7 @@
         </div>
 
         <div class="col-md-4 form-group">
-            {{ html()->label('Gender')->for('gender') }} <span>*</span>
+            {{ html()->label('लिङ्ग')->for('gender') }} <span>*</span>
             {{ html()->select('gender', $data['gender_options'])->class('form-control') }}
             @error('gender')
                 <span class="text-danger"><i>{{ $message }}</i></span>
@@ -42,7 +42,7 @@
         </div>
 
         <div class="col-md-4 form-group">
-            {{ html()->label('Image')->for('image') }}
+            {{ html()->label('फोटो')->for('image') }}
             {{ html()->file('image') }}
             @error('image')
                 <span class="text-danger"><i>{{ $message }}</i></span>
@@ -59,10 +59,10 @@
 </fieldset>
 
 <fieldset class="fieldset-border">
-    <legend class="legend-border">Address Details</legend>
+    <legend class="legend-border">ठेगानाको विवरण</legend>
     <div class="row-auto">
         <div class="col-md-3 form-group">
-            {{ html()->label('District')->for('district') }} <span>*</span>
+            {{ html()->label('जिल्ला')->for('district') }} <span>*</span>
             {{ html()->text('district')->class('form-control')->placeholder('District') }}
             @error('district')
                 <span class="text-danger"><i>{{ $message }}</i></span>
@@ -70,7 +70,7 @@
         </div>
 
         <div class="col-md-3 form-group">
-            {{ html()->label('Local Level Type')->for('local_level_type_id') }} <span>*</span>
+            {{ html()->label('स्थानीय तहको किसिम')->for('local_level_type_id') }} <span>*</span>
             {{ html()->select('local_level_type_id', $data['lltype_options'])->class('form-control') }}
             @error('local_level_type_id')
                 <span class="text-danger"><i>{{ $message }}</i></span>
@@ -78,7 +78,7 @@
         </div>
 
         <div class="col-md-3 form-group">
-            {{ html()->label('Local Level Name')->for('municipality') }} <span>*</span>
+            {{ html()->label('स्थानीय तह')->for('municipality') }} <span>*</span>
             {{ html()->text('municipality')->class('form-control')->placeholder('local level name') }}
             @error('municipality')
                 <span class="text-danger"><i>{{ $message }}</i></span>
@@ -86,7 +86,7 @@
         </div>
 
         <div class="col-md-3 form-group">
-            {{ html()->label('Ward No')->for('ward_no') }} <span>*</span>
+            {{ html()->label('वडा नं.')->for('ward_no') }} <span>*</span>
             {{ html()->number('ward_no')->class('form-control')->placeholder('Ward No.') }}
             @error('ward_no')
                 <span class="text-danger"><i>{{ $message }}</i></span>
@@ -96,10 +96,10 @@
 </fieldset>
 
 <fieldset class="fieldset-border">
-    <legend class="legend-border">Contact Details</legend>
+    <legend class="legend-border">सम्पर्क विवरण</legend>
     <div class="row-auto">
         <div class="col-md-6 form-group">
-            {{ html()->label('Email')->for('email') }}
+            {{ html()->label('इमेल')->for('email') }}
             {{ html()->text('email')->class('form-control')->placeholder('email') }}
             @error('email')
                 <span class="text-danger"><i>{{ $message }}</i></span>
@@ -107,7 +107,7 @@
         </div>
 
         <div class="col-md-6 form-group">
-            {{ html()->label('Mobile')->for('mobile') }} <span>*</span>
+            {{ html()->label('मोबाइल नं.')->for('mobile') }} <span>*</span>
             {{ html()->text('mobile')->class('form-control')->placeholder('mobile') }}
             @error('mobile')
                 <span class="text-danger"><i>{{ $message }}</i></span>

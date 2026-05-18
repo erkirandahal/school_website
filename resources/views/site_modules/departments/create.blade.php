@@ -1,15 +1,15 @@
 @extends('layouts.admin.app')
 
-@section('title', 'Department > Create')
+@section('title', 'शाखागत विवरण > नयाँ थप')
 
 @section('content')
     <!-- Content Header (Department header) -->
     <section class="content-header">
         <h1> Departments</h1>
         <ol class="breadcrumb">
-            <li><a href="{{ route('dashboard') }}"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-            <li><a href="{{ route('departments.index') }}"> Departments</a></li>
-            <li class="active">Create</li>
+            <li><a href="{{ route('dashboard') }}"><i class="fa fa-dashboard"></i> ड्यासबोर्ड</a></li>
+            <li><a href="{{ route('departments.index') }}"> शाखा</a></li>
+            <li class="active">नयाँ थप</li>
         </ol>
     </section>
     <!-- Main content -->
@@ -28,10 +28,10 @@
                 <div class="form-inline">
                     <div class="pull pull-right">
                         <div class="form-group">
-                            <button class="btn btn-success pull-right" type="submit">Submit</button>
+                            <button class="btn btn-success pull-right" type="submit">पेश</button>
                         </div>
                         <div class="form-group">
-                            <a class="btn btn-danger pull-right" href="{{ route('departments.index') }}">Cancel</a>
+                            <a class="btn btn-danger pull-right" href="{{ route('departments.index') }}">रद्द</a>
                         </div>
                     </div>
                 </div>

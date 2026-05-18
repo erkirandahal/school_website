@@ -9,39 +9,38 @@ use Illuminate\Database\Seeder;
 
 class MenuTableSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
     public function run(): void
     {
-
-        // Clear existing menu data
         Menu::truncate();
 
-        // Define the menu structure
         $menus = [
             [
                 'label' => 'Home',
+                'label_nepali' => 'गृहपृष्ठ',
                 'url' => '/',
                 'position' => 0,
             ],
             [
-                'label' => Page::ABOUT->title(),
+                'label' => 'About Us',
+                'label_nepali' => 'हाम्रो बारेमा',
                 'url' => '/' . Page::ABOUT->slug(),
                 'position' => 1,
                 'children' => [
                     [
-                        'label' => Page::INTRODUCTION->title(),
+                        'label' => 'Introduction',
+                        'label_nepali' => 'परिचय',
                         'url' => '/' . Page::INTRODUCTION->slug(),
                         'position' => 9,
                     ],
                     [
-                        'label' => Page::MISSION_VISION_GOAL_AND_OBJECTIVES->title(),
+                        'label' => 'Mission, Vision, Goals & Objectives',
+                        'label_nepali' => 'मिशन, भिजन, लक्ष्य र उद्देश्य',
                         'url' => '/' . Page::MISSION_VISION_GOAL_AND_OBJECTIVES->slug(),
                         'position' => 10,
                     ],
                     [
-                        'label' => Page::STUDENT_CLUBS->title(),
+                        'label' => 'Student Clubs',
+                        'label_nepali' => 'विद्यार्थी क्लबहरू',
                         'url' => '/' . Page::STUDENT_CLUBS->slug(),
                         'position' => 11,
                     ],
@@ -49,21 +48,25 @@ class MenuTableSeeder extends Seeder
             ],
             [
                 'label' => 'Members',
+                'label_nepali' => 'सदस्यहरू',
                 'url' => null,
                 'position' => 2,
                 'children' => [
                     [
                         'label' => 'Faculties',
+                        'label_nepali' => 'शिक्षकहरू',
                         'url' => '/faculties',
                         'position' => 13,
                     ],
                     [
-                        'label' => Page::SMC->title(),
+                        'label' => 'School Management Committee (SMC)',
+                        'label_nepali' => 'विद्यालय व्यवस्थापन समिति (SMC)',
                         'url' => '/' . Page::SMC->slug(),
                         'position' => 14,
                     ],
                     [
-                        'label' => Page::PTA->title(),
+                        'label' => 'Parent Teacher Association (PTA)',
+                        'label_nepali' => 'अभिभावक शिक्षक संघ (PTA)',
                         'url' => '/' . Page::PTA->slug(),
                         'position' => 15,
                     ],
@@ -71,77 +74,89 @@ class MenuTableSeeder extends Seeder
             ],
             [
                 'label' => 'Programs',
+                'label_nepali' => 'कार्यक्रमहरू',
                 'url' => '/programs',
                 'position' => 3,
                 'is_active' => false,
             ],
             [
                 'label' => 'Facilities',
+                'label_nepali' => 'सुविधाहरू',
                 'url' => '/facilities',
                 'position' => 4,
             ],
             [
-                'label' => PostCategory::NEWS_AND_EVENTS->title(),
+                'label' => 'News & Events',
+                'label_nepali' => 'समाचार तथा कार्यक्रम',
                 'url' => '/' . PostCategory::NEWS_AND_EVENTS->slug(),
                 'position' => 5,
             ],
             [
                 'label' => 'Resources',
+                'label_nepali' => 'स्रोतहरू',
                 'url' => null,
                 'position' => 6,
                 'children' => [
                     [
-                        'label' => PostCategory::NOTICE->title(),
+                        'label' => 'Notices',
+                        'label_nepali' => 'सूचनाहरू',
                         'url' => '/resources/' . PostCategory::NOTICE->slug(),
                         'position' => 16,
                     ],
                     [
-                        'label' => PostCategory::ANNUAL_CALENDAR->title(),
+                        'label' => 'Annual Calendar',
+                        'label_nepali' => 'वार्षिक क्यालेन्डर',
                         'url' => '/resources/' . PostCategory::ANNUAL_CALENDAR->slug(),
                         'position' => 17,
                     ],
                     [
-                        'label' => PostCategory::CAREER->title(),
+                        'label' => 'Career',
+                        'label_nepali' => 'करियर',
                         'url' => '/resources/' . PostCategory::CAREER->slug(),
                         'position' => 18,
                     ],
                     [
-                        'label' => PostCategory::SMC_DECISION->title(),
+                        'label' => 'SMC Decisions',
+                        'label_nepali' => 'SMC निर्णयहरू',
                         'url' => '/resources/' . PostCategory::SMC_DECISION->slug(),
                         'position' => 19,
                     ],
                     [
                         'label' => 'Publications',
+                        'label_nepali' => 'प्रकाशनहरू',
                         'url' => '/publications',
-                        'position' => 19,
+                        'position' => 20,
                     ],
                 ]
             ],
             [
                 'label' => 'Gallery',
+                'label_nepali' => 'ग्यालरी',
                 'url' => null,
                 'position' => 7,
                 'children' => [
                     [
                         'label' => 'Photo Gallery',
+                        'label_nepali' => 'फोटो ग्यालरी',
                         'url' => '/photo-gallery',
-                        'position' => 20,
+                        'position' => 21,
                     ],
                     [
                         'label' => 'Video Gallery',
+                        'label_nepali' => 'भिडियो ग्यालरी',
                         'url' => '/video-gallery',
-                        'position' => 21,
+                        'position' => 22,
                     ],
                 ]
             ],
             [
-                'label' => Page::CONTACT_US->title(),
+                'label' => 'Contact Us',
+                'label_nepali' => 'सम्पर्क गर्नुहोस्',
                 'url' => '/' . Page::CONTACT_US->slug(),
                 'position' => 8,
             ],
         ];
 
-        // Create menu items
         foreach ($menus as $menu) {
             $this->createMenu($menu);
         }
@@ -149,9 +164,9 @@ class MenuTableSeeder extends Seeder
 
     private function createMenu(array $data, $parentId = null)
     {
-        // Create the menu item
         $menu = Menu::create([
             'label' => $data['label'],
+            'label_nepali' => $data['label_nepali'] ?? null,
             'url' => $data['url'] ?? null,
             'position' => $data['position'] ?? 0,
             'icon' => $data['icon'] ?? null,
@@ -159,7 +174,6 @@ class MenuTableSeeder extends Seeder
             'is_active' => $data['is_active'] ?? 1,
         ]);
 
-        // If there are children, create them recursively
         if (isset($data['children'])) {
             foreach ($data['children'] as $child) {
                 $this->createMenu($child, $menu->id);

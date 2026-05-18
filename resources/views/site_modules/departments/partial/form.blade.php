@@ -1,8 +1,8 @@
 <fieldset class="fieldset-border">
-    <legend class="legend-border">Details</legend>
+    <legend class="legend-border">विवरण</legend>
 
     <div class="col-md-12 form-group">
-        {{ html()->label('Title')->for('title') }} <span>*</span>
+        {{ html()->label('शाखाको नाम')->for('title') }} <span>*</span>
 
         {{ html()->text('title')->class('form-control')->placeholder('Title') }}
 
@@ -13,11 +13,11 @@
 </fieldset>
 
 <fieldset class="fieldset-border">
-    <legend class="legend-border">Website Display Options</legend>
+    <legend class="legend-border">प्रणालीको लागि अन्य आवश्यक विवरण</legend>
 
     <div class="row col-md-12">
         <div class="col-md-4 form-group">
-            {{ html()->label('Display Order')->for('order') }} <span>*</span>
+            {{ html()->label('देखाउने क्रम दिनुहोस')->for('order') }} <span>*</span>
 
             {{ html()->number('order')->class('form-control') }}
 
@@ -29,7 +29,7 @@
 
     <div class="row col-md-12">
         <div class="col-md-4 form-group">
-            {{ html()->label('Publish on website ?')->for('status') }} <span>*</span>
+            {{ html()->label('वेवसाइटमा देखाउने हो ?')->for('status') }} <span>*</span>
 
             {{ html()->select('status', $data['publish_options'])->class('form-control') }}
 

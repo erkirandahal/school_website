@@ -15,7 +15,7 @@ class CommonDataManager
 	}
 
 	public function genderDropdown(){
-		return [null=>'--select--','Male'=>'Male','Female'=>'Female','Other'=>'Other'];
+		return [null=>'--छानुहोस--','Male'=>'पुरुष','Female'=>'महिला','Other'=>'अन्य'];
 	}
 
 	public function degreeStatusDropdown(){
@@ -27,18 +27,18 @@ class CommonDataManager
 	}
 
 	public function yesNoDropdown(){
-		return [null=>'--select--',1=>'YES', 0 =>'NO'];
+		return [null=>'--चयन गर्नुहोस--',1=>'हो', 0 =>'होइन'];
 	}
 
 
 	public function publishStatusDropdown(){
-		return [null=>'--select--',1 =>'Published',0=>'Draft'];
+		return [null=>'--चयन गर्नुहोस--',1 =>'प्रकाशन',0=>'ड्राफ्ट'];
 	}
 
 	public function galleryTypeDropdown(){
 		return [
 			null => '--Select--',
-			'image' => 'Image', 
+			'image' => 'Image',
 			'video' => 'Video'
 		];
 	}
@@ -46,7 +46,7 @@ class CommonDataManager
 	public function socialSiteTypeDropdown(){
 		return [
 			null => '--Select--',
-			'facebook-page' => 'Facebook Page', 
+			'facebook-page' => 'Facebook Page',
 			'twitter-handle' => 'Twitter Handle',
 			'google-map' => 'Google Map',
 		];

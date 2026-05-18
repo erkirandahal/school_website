@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class DocumentType extends Model
 {
     use HasFactory;
-    protected $fillable = ['title','slug','image','status','order'];
+    protected $fillable = ['title', 'title_ne', 'slug','image','status','order'];
 
     protected $table = 'document_types';
 }
