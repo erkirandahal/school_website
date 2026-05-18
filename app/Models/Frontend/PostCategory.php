@@ -9,7 +9,14 @@ class PostCategory extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['title','slug','image','status','order'];
+    protected $fillable = [
+        'title',
+        'title_np',
+        'slug',
+        'image',
+        'status',
+        'order'
+    ];
 
     protected $table = 'post_categories';
 }

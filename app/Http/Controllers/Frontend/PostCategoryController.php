@@ -92,7 +92,7 @@ class PostCategoryController extends Controller
 
             if (Sentinel::hasAccess('post-categories.store')) {
                 DB::beginTransaction();
-                $postCategoryDetails = $request->only('title', 'order', 'status');
+                $postCategoryDetails = $request->only('title', 'title_np', 'order', 'status');
                 $postCategoryDetails['slug'] = Str::slug($request->title);
 
                 if ($request->hasFile('image')) {

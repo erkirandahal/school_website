@@ -2,43 +2,63 @@
 
 namespace Database\Seeders;
 
-use App\Enums\PostCategory as PostCategoryEnum;
 use App\Models\Frontend\PostCategory;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
 class PostCategoryTableSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
     public function run()
     {
         $categories = [
-            PostCategoryEnum::NEWS_AND_EVENTS,
-            PostCategoryEnum::NOTICE,
-            PostCategoryEnum::RESULT,
-            PostCategoryEnum::CAREER,
-            PostCategoryEnum::ANNUAL_CALENDAR,
-            PostCategoryEnum::SMC_DECISION,
+            [
+                'title' => 'News and Events',
+                'title_np' => 'समाचार तथा कार्यक्रम',
+                'slug' => 'news-and-events',
+            ],
+            [
+                'title' => 'Notice',
+                'title_np' => 'सूचना',
+                'slug' => 'notice',
+            ],
+            [
+                'title' => 'Result',
+                'title_np' => 'नतिजा',
+                'slug' => 'result',
+            ],
+            [
+                'title' => 'Career',
+                'title_np' => 'रोजगार',
+                'slug' => 'career',
+            ],
+            [
+                'title' => 'Annual Calendar',
+                'title_np' => 'वार्षिक पात्रो',
+                'slug' => 'annual-calendar',
+            ],
+            [
+                'title' => 'SMC Decision',
+                'title_np' => 'विद्यालय व्यवस्थापन समितिको निर्णय',
+                'slug' => 'smc-decision',
+            ],
         ];
+
         DB::statement('SET FOREIGN_KEY_CHECKS=0;');
 
-        // Clear existing page data
+        // Remove all existing records
         PostCategory::truncate();
 
-        foreach ($categories as $index => $categoryEnum) {
-            PostCategory::updateOrCreate(
-                [
-                    'title' => $categoryEnum->title(),
-                    'slug' => $categoryEnum->slug(),
-                    'order' => $index + 1,
-                    'status' => true,
-                ],
-            );
+        foreach ($categories as $index => $category) {
+
+            PostCategory::create([
+                'title' => $category['title'],
+                'title_np' => $category['title_np'],
+                'slug' => $category['slug'],
+                'order' => $index + 1,
+                'status' => true,
+            ]);
         }
+
         DB::statement('SET FOREIGN_KEY_CHECKS=1;');
     }
 }

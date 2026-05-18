@@ -19,7 +19,7 @@
                 <h3 class="box-title">पोस्ट श्रेणी सूची</h3>
                 <div class="box-tools pull-right">
                     <a class="btn btn-sm btn-success" href="{{ route('post-categories.create') }}">
-                        <i class="fa fa-plus"></i> नयाँ पोस्ट श्रेणी थप्नुहोस्
+                        <i class="fa fa-plus"></i> नयाँ थप
                     </a>
                 </div>
             </div>
@@ -50,7 +50,8 @@
                     <table class="table table-bordered table-striped">
                         <thead>
                             <th>S.No.</th>
-                            <th>शीर्षक</th>
+                            <th>Title</th>
+                            <th>शीर्षक (नेपाली) </th>
                             <th>तस्बिर</th>
                             <th>क्रम</th>
                             <th>स्थिति</th>
@@ -68,7 +69,7 @@
                                 <tr>
                                     <td>{{ $sno++ }}</td>
                                     <td>{{ $post_category->title }}</td>
-
+                                    <td>{{ $post_category->title_np }}</td>
                                     <td>
                                         <img src="{{ asset('uploads/post_categories/' . $post_category->image) }}"
                                             width="80px">

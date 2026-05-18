@@ -25,6 +25,7 @@ class PostCategoryRequest extends FormRequest
     {
        $errors = [];
        $errors['title'] = 'required|max:255';
+       $errors['title_np'] = 'required|max:255';
 
        if(request()->method() == 'POST'){
         $errors['image'] = 'image|mimes:jpg,png,jpeg,gif|max:5120';
