@@ -1,10 +1,10 @@
 <fieldset class="fieldset-border">
-    <legend class="legend-border">Post Category Details</legend>
+    <legend class="legend-border">पोस्टका प्रकारहरू</legend>
     <div>
         <div class="col-md-12 form-group">
-            {{ html()->label('post prakar')->for('title') }} <span>*</span>
+            {{ html()->label('शीर्षक')->for('title') }} <span>*</span>
 
-            {{ html()->text('title')->class('form-control')->placeholder('Title') }}
+            {{ html()->text('title')->class('form-control')->placeholder('शीर्षक') }}
 
             @error('title')
                 <span class="text-danger"><i>{{ $message }}</i></span>
@@ -13,7 +13,7 @@
 
         <div class="col-md-12 form-group">
 
-            {{ html()->label('Image')->for('image') }} <span>*</span>
+            {{ html()->label('फोटो')->for('image') }} <span>*</span>
             {{ html()->file('image')->id('image')->class('form-control') }}
 
             @error('image')
@@ -22,8 +22,8 @@
 
             <span class="text-default">
                 <p>
-                    <i>Files must be less than <strong>5 MB.</strong></i><br>
-                    <i>Allowed file types: <strong>png gif jpg jpeg.</strong></i>
+                    <i>फाइल साइज अधिकतम <strong>5 MB</strong> हुनुपर्छ।</i><br>
+                    <i>अनुमति प्राप्त फाइल प्रकार: <strong>png, gif, jpg, jpeg</strong></i>
                 </p>
             </span>
 
@@ -32,17 +32,18 @@
                     <img src="{{ asset('uploads/post_categories/' . $post_category->image) }}" width="100">
                 </div>
             @else
-                <span class="text-danger">No Image</span>
+                <span class="text-danger">तस्बिर छैन</span>
             @endif
         </div>
     </div>
 </fieldset>
 
 <fieldset class="fieldset-border">
-    <legend class="legend-border">Website Display Options</legend>
+    <legend class="legend-border">अन्य विवरण</legend>
+
     <div class="row-auto">
         <div class="col-md-4 form-group">
-            {{ html()->label('Display Order')->for('order') }} <span>*</span>
+            {{ html()->label('क्रम (Dispay Order)')->for('order') }} <span>*</span>
 
             {{ html()->number('order')->class('form-control') }}
 
@@ -54,7 +55,7 @@
 
     <div class="row-auto">
         <div class="col-md-4 form-group">
-            {{ html()->label('Publish on website ?')->for('status') }} <span>*</span>
+            {{ html()->label('वेबसाइटमा प्रकाशित गर्ने हो?')->for('status') }} <span>*</span>
 
             {{ html()->select('status', $data['publish_options'])->class('form-control') }}
 
