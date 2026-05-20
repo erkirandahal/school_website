@@ -21,16 +21,15 @@ class DesignationController extends Controller
     {
         try {
 
-            if(Sentinel::hasAccess('designations.index')){
+            if (Sentinel::hasAccess('designations.index')) {
                 $setting = defaultSetting();
-                $designations = Designation::orderBy('order','ASC')->paginate($setting->per_page);
-                return view('admin.designation.index',compact('designations'));
-
-            }else{
-                return redirect()->route('dashboard')->with('error','Oops! Permissions denied.');
+                $designations = Designation::orderBy('order', 'ASC')->paginate($setting->per_page);
+                return view('admin.designation.index', compact('designations'));
+            } else {
+                return redirect()->route('dashboard')->with('error', 'Oops! Permissions denied.');
             }
         } catch (Exception $e) {
-            return redirect()->route('designations.index')->with('error','Oops! Something went wrong.');
+            return redirect()->route('designations.index')->with('error', 'Oops! Something went wrong.');
         }
     }
 
@@ -42,17 +41,15 @@ class DesignationController extends Controller
     public function create()
     {
         try {
-         if(Sentinel::hasAccess('designations.create')){
-            return view('admin.designation.create');
-
-        }else{
-            return redirect()->route('dashboard')->with('error','Oops! Permissions denied.');
+            if (Sentinel::hasAccess('designations.create')) {
+                return view('admin.designation.create');
+            } else {
+                return redirect()->route('dashboard')->with('error', 'Oops! Permissions denied.');
+            }
+        } catch (Exception $e) {
+            return redirect()->route('designations.index')->with('error', 'Oops! Something went wrong.');
         }
-    } catch (Exception $e) {
-        return redirect()->route('designations.index')->with('error','Oops! Something went wrong.');
     }
-
-}
 
     /**
      * Store a newly created resource in storage.
@@ -62,23 +59,25 @@ class DesignationController extends Controller
      */
     public function store(DesignationRequest $request)
     {
-       try {
+        try {
 
-        if(Sentinel::hasAccess('designations.store')){
+            if (Sentinel::hasAccess('designations.store')) {
 
-            $requestDetails = $request->only('name','order');
-            $requestDetails['slug'] = Str::slug($request->name);
-            Designation::create($requestDetails);
-            return redirect()->route('designations.index')->with('success','Successfully Created!');
-
-        }else{
-            return redirect()->route('dashboard')->with('error','Oops! Permissions denied.');
+                $requestDetails = $request->only(
+                    'name',
+                    'name_np',
+                    'order'
+                );
+                $requestDetails['slug'] = Str::slug($request->name);
+                Designation::create($requestDetails);
+                return redirect()->route('designations.index')->with('success', 'Successfully Created!');
+            } else {
+                return redirect()->route('dashboard')->with('error', 'Oops! Permissions denied.');
+            }
+        } catch (Exception $e) {
+            return redirect()->route('designations.index')->with('error', 'Oops! Something went wrong.');
         }
-
-    } catch (Exception $e) {
-        return redirect()->route('designations.index')->with('error','Oops! Something went wrong.');
     }
-}
 
     /**
      * Display the specified resource.
@@ -102,19 +101,17 @@ class DesignationController extends Controller
 
         try {
 
-            if(Sentinel::hasAccess('designations.edit')){
+            if (Sentinel::hasAccess('designations.edit')) {
 
-               $designation = Designation::find($id);
-               return view('admin.designation.edit',compact('designation'));
-
-           }else{
-            return redirect()->route('dashboard')->with('error','Oops! Permissions denied.');
+                $designation = Designation::find($id);
+                return view('admin.designation.edit', compact('designation'));
+            } else {
+                return redirect()->route('dashboard')->with('error', 'Oops! Permissions denied.');
+            }
+        } catch (Exception $e) {
+            return redirect()->route('designations.index')->with('error', 'Oops! Something went wrong.');
         }
-    } catch (Exception $e) {
-        return redirect()->route('designations.index')->with('error','Oops! Something went wrong.');
     }
-
-}
 
     /**
      * Update the specified resource in storage.
@@ -128,20 +125,22 @@ class DesignationController extends Controller
 
         try {
 
-            if(Sentinel::hasAccess('designations.update')){
+            if (Sentinel::hasAccess('designations.update')) {
                 $designation = Designation::find($id);
-                $details = $request->only('name','order');
+                $requestDetails = $request->only(
+                    'name',
+                    'name_np',
+                    'order'
+                );
                 $details['slug'] = Str::slug($request->name);
                 $designation->update($details);
-                return redirect()->route('designations.index')->with('success','Successfully Updated!');
-
-            }else{
-                return redirect()->route('dashboard')->with('error','Oops! Permissions denied.');
+                return redirect()->route('designations.index')->with('success', 'Successfully Updated!');
+            } else {
+                return redirect()->route('dashboard')->with('error', 'Oops! Permissions denied.');
             }
         } catch (Exception $e) {
-            return redirect()->route('designations.index')->with('error','Oops! Something went wrong.');
+            return redirect()->route('designations.index')->with('error', 'Oops! Something went wrong.');
         }
-        
     }
 
     /**
@@ -153,16 +152,14 @@ class DesignationController extends Controller
     public function destroy($id)
     {
         try {
-            if(Sentinel::hasAccess('designations.delete')){
+            if (Sentinel::hasAccess('designations.delete')) {
                 Designation::destroy($id);
-                return redirect()->route('designations.index')->with('success','Successfully Deleted!');
-            }else{
-                return redirect()->route('dashboard')->with('error','Oops! Permissions denied.');
+                return redirect()->route('designations.index')->with('success', 'Successfully Deleted!');
+            } else {
+                return redirect()->route('dashboard')->with('error', 'Oops! Permissions denied.');
             }
-            
         } catch (Exception $e) {
-            return redirect()->route('designations.index')->with('error','Oops! Something went wrong.');
+            return redirect()->route('designations.index')->with('error', 'Oops! Something went wrong.');
         }
-        
     }
 }

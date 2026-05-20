@@ -29,10 +29,10 @@
                 <div class="form-inline">
                     <div class="pull pull-right">
                         <div class="form-group">
-                            <button class="btn btn-success pull-right" type="submit">Submit</button>
+                            <button class="btn btn-success pull-right" type="submit">पेश</button>
                         </div>
                         <div class="form-group">
-                            <a class="btn btn-danger pull-right" href="{{ route('galleries.index') }}">Cancel</a>
+                            <a class="btn btn-danger pull-right" href="{{ route('galleries.index') }}">रद्द</a>
                         </div>
                     </div>
                 </div>

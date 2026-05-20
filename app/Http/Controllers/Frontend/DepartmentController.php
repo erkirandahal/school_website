@@ -87,7 +87,7 @@ class DepartmentController extends Controller
 
             if (Sentinel::hasAccess('departments.store')) {
                 DB::beginTransaction();
-                $details = $request->only('title', 'order', 'status');
+                $details = $request->only('title', 'title_np', 'order', 'status');
                 $details['slug'] = Str::slug($request->title);
                 $department = Department::create($details);
                 DB::commit();
@@ -162,7 +162,7 @@ class DepartmentController extends Controller
 
             if (Sentinel::hasAccess('departments.update')) {
                 DB::beginTransaction();
-                $details = $request->only('title', 'status', 'order');
+                $details = $request->only('title', 'title_np', 'order', 'status');
                 $details['slug'] = Str::slug($request->title);
                 $department = Department::find($id);
                 $department->update($details);

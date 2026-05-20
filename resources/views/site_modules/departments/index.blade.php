@@ -16,10 +16,10 @@
         <!-- Default box -->
         <div class="box">
             <div class="box-header with-border">
-                <h3 class="box-title">Departments List</h3>
+                <h3 class="box-title">शाखा </h3>
                 <div class="box-tools pull-right">
                     <a class="btn btn-sm btn-success" href="{{ route('departments.create') }}"> <i class="fa fa-plus"></i>
-                        Add New Department</a>
+                        नयाँ थप</a>
                 </div>
             </div>
             <div class="box-body">
@@ -50,11 +50,12 @@
                 <div id="table-wrapper" class="table-responsive">
                     <table class="table table-bordered table-striped">
                         <thead>
-                            <th>S.No.</th>
-                            <th>Title</th>
-                            <th>Order</th>
-                            <th>Status</th>
-                            <th>Action</th>
+                            <th>क्र.स.</th>
+                            <th>शिर्षक (English)</th>
+                            <th>शिर्षक (नेपाली)</th>
+                            <th>क्रम</th>
+                            <th>स्थिति</th>
+                            <th>कार्य</th>
                         </thead>
                         <tbody>
                             @php $sno = ($departments->currentPage()==1) ? 1 : ($departments->currentPage()-1)*$departments->perPage()+1 ; @endphp
@@ -63,6 +64,9 @@
                                     <td>{{ $sno++ }}</td>
                                     <td>
                                         {{ $department->title }}
+                                    </td>
+                                    <td>
+                                        {{ $department->title_np }}
                                     </td>
                                     <td>{{ $department->order }}</td>
 

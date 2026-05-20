@@ -38,7 +38,7 @@
             <div class="slider-content slider-content-2">
               <h1 class="white-color f-700" data-animation="fadeInUp" data-delay=".2s"><span>{{ $banner->title }}</span></h1>
               <p data-animation="fadeInUp" data-delay=".4s">{{ $banner->tagline }}</p>
-              <button class="theme-btn" data-animation="fadeInUp" data-delay=".6s"><span class="btn-text">Welcome</span></button>
+              <button class="theme-btn" data-animation="fadeInUp" data-delay=".6s"><span class="btn-text">स्वागत</span></button>
             </div>
           </div>
         </div>
@@ -52,7 +52,7 @@
             <div class="slider-content slider-content-2">
               <h1 class="white-color f-700" data-animation="fadeInUp" data-delay=".2s">Title 1</h1>
               <p data-animation="fadeInUp" data-delay=".4s">Tagline 1</p>
-              <button class="theme-btn" data-animation="fadeInUp" data-delay=".6s"><span class="btn-text">Welcome</span></button>
+              <button class="theme-btn" data-animation="fadeInUp" data-delay=".6s"><span class="btn-text">स्वागत</span></button>
             </div>
           </div>
         </div>
@@ -65,7 +65,7 @@
             <div class="slider-content slider-content-2 text-center">
               <h1 class="white-color f-700" data-animation="fadeInUp" data-delay=".2s">Title 2</h1>
               <p data-animation="fadeInUp" data-delay=".4s">tagline 2</p>
-              <button class="theme-btn" data-animation="fadeInUp" data-delay=".6s"><span class="btn-text">Welcome</span></button>
+              <button class="theme-btn" data-animation="fadeInUp" data-delay=".6s"><span class="btn-text">स्वागत</span></button>
             </div>
           </div>
         </div>

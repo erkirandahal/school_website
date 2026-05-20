@@ -2,12 +2,21 @@
     <legend class="legend-border">विवरण</legend>
 
     <div class="col-md-12 form-group">
-        {{ html()->label('शाखाको नाम')->for('title') }} <span>*</span>
+        {{ html()->label('शाखाको नाम (English)')->for('title') }} <span>*</span>
 
         {{ html()->text('title')->class('form-control')->placeholder('Title') }}
 
         @if ($errors)
             <span class="text-danger"><i>{{ $errors->first('title') }}</i></span>
+        @endif
+    </div>
+    <div class="col-md-12 form-group">
+        {{ html()->label('शाखाको नाम (नेपाली)')->for('title_np') }} <span>*</span>
+
+        {{ html()->text('title_np')->class('form-control')->placeholder('Title (नेपाली)') }}
+
+        @if ($errors)
+            <span class="text-danger"><i>{{ $errors->first('title_np') }}</i></span>
         @endif
     </div>
 </fieldset>

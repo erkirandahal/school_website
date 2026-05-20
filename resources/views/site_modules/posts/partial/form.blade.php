@@ -1,8 +1,8 @@
 <fieldset class="fieldset-border">
-    <legend class="legend-border">Details</legend>
+    <legend class="legend-border">विवरण</legend>
     <div class="row-auto">
         <div class="col-md-12 form-group">
-            {{ html()->label('Title')->for('title') }} <span>*</span>
+            {{ html()->label('Title (शिर्षक)')->for('title') }} <span>*</span>
 
             {{ html()->text('title')->class('form-control')->placeholder('Title') }}
 
@@ -12,7 +12,7 @@
         </div>
 
         <div class="col-md-6 form-group">
-            {{ html()->label('Year')->for('academic_year_id') }} <span>*</span>
+            {{ html()->label('बर्ष')->for('academic_year_id') }} <span>*</span>
 
             {{ html()->select('academic_year_id', $data['year_options'], $data['setting']->academic_year_id)->class('form-control') }}
 
@@ -22,7 +22,7 @@
         </div>
 
         <div class="col-md-6 form-group">
-            {{ html()->label('Post Category')->for('post_category_id') }} <span>*</span>
+            {{ html()->label('पोस्टको प्रकार')->for('post_category_id') }} <span>*</span>
             {{ html()->select('post_category_id', $data['post_category_options'])->class('form-control') }}
             @error('post_category_id')
                 <span class="text-danger"><i>{{ $message }}</i></span>
@@ -30,7 +30,7 @@
         </div>
 
         <div class="col-md-12 form-group">
-            {{ html()->label('Summary')->for('summary') }}
+            {{ html()->label('सारंश')->for('summary') }}
 
             {{ html()->textarea('summary')->id('summary')->rows(2)->class('form-control')->placeholder('summary goes here...') }}
 
@@ -40,7 +40,7 @@
         </div>
 
         <div class="col-md-12 form-group">
-            {{ html()->label('Description')->for('description') }}
+            {{ html()->label('विस्तृत विवरण')->for('description') }}
 
             {{ html()->textarea('description')->id('editor')->class('form-control')->placeholder('description goes here...') }}
 
@@ -50,15 +50,15 @@
         </div>
 
         <div class="col-md-6 form-group">
-            {{ html()->label('Image')->for('image') }}
+            {{ html()->label('फोटो')->for('image') }}
             {{ html()->file('image')->id('image') }}
             @error('image')
                 <span class="text-danger"><i>{{ $message }}</i></span>
             @enderror
             <span class="text-default">
                 <p>
-                    <i>Files must be less than <strong>5 MB.</strong></i><br>
-                    <i>Allowed file types: <strong>png gif jpg jpeg.</strong></i>
+                    <i>फाइल <strong>5 MB.</strong> भन्दा बढी हुन नमिल्ने</i><br>
+                    <i>फाइलको प्रकार: <strong>png gif jpg jpeg.</strong></i>
                 </p>
             </span>
             @if (isset($post) && $post->image)
@@ -69,12 +69,12 @@
                     </div>
                 </a>
             @else
-                <span class="text-danger">No Attachment</span>
+                <span class="text-danger">फोटो छैनt</span>
             @endif
         </div>
 
         <div class="col-md-6 form-group">
-            {{ html()->label('Attachment')->for('attachment') }}
+            {{ html()->label('काजजातहरू')->for('attachment') }}
 
             {{ html()->file('attachment')->id('attachment') }}
 
@@ -84,8 +84,8 @@
 
             <span class="text-default">
                 <p>
-                    <i>Files must be less than <strong>5 MB.</strong></i><br>
-                    <i>Allowed file types: <strong>doc, docx, xls, xlsx, pdf.</strong></i>
+                    <i>फाइल <strong>5 MB.</strong> भन्दा बढी हुन नमिल्ने</i><br>
+                    <i>फाइलको प्रकार: <strong>doc, docx, xls, xlsx, pdf.</strong></i>
                 </p>
             </span>
 
@@ -94,17 +94,17 @@
                     <i class="fa fa-file"></i> view
                 </a>
             @else
-                <span class="text-danger">No Attachment</span>
+                <span class="text-danger">कागजात छैन</span>
             @endif
         </div>
     </div>
 </fieldset>
 
 <fieldset class="fieldset-border">
-    <legend class="legend-border">Published on website</legend>
+    <legend class="legend-border">वेवसाइटमा राख्ने विवरण</legend>
 
     <div class="col-md-4 form-group">
-        {{ html()->label('Publish on website ?')->for('status') }} <span>*</span>
+        {{ html()->label('वेवसाइटमा देखाउने हो ?')->for('status') }} <span>*</span>
 
         {{ html()->select('status', $data['publish_options'])->class('form-control') }}
 
@@ -114,7 +114,7 @@
     </div>
 
     <div class="col-md-4 form-group">
-        {{ html()->label('Show on modal ?')->for('show_on_modal') }} <span>*</span>
+        {{ html()->label('पपअपमा देखाउने हो ?')->for('show_on_modal') }} <span>*</span>
 
         {{ html()->select('show_on_modal', [1 => 'YES', 0 => 'NO'])->class('form-control') }}
 
@@ -124,7 +124,7 @@
     </div>
 
     <div class="col-md-4 form-group">
-        {{ html()->label('Publish Date')->for('date') }} <span>*</span>
+        {{ html()->label('प्रकाशन मिति')->for('date') }} <span>*</span>
 
         {{ html()->text('date')->id('published_date')->class('form-control') }}
 

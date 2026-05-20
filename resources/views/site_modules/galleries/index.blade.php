@@ -18,28 +18,27 @@
             <div class="box-header with-border">
                 <h3 class="box-title">Gallery List</h3>
                 <div class="box-tools pull-right">
-                    <a class="btn btn-sm btn-success" href="{{ route('galleries.create') }}"> <i class="fa fa-plus"></i> Add
-                        New Gallery</a>
+                    <a class="btn btn-sm btn-success" href="{{ route('galleries.create') }}"> <i class="fa fa-plus"></i> नयाँ थप</a>
                 </div>
             </div>
             <div class="box-body no-padding py-15">
                 <div class="row mx-0">
                     <div class="col-md-3">
-                        {{ html()->label('Title')->for('title') }}
+                        {{ html()->label('शिर्षक')->for('title') }}
                         <div class="form-group">
                             {{ html()->text('title')->id('title')->class('form-control')->placeholder('title') }}
                         </div>
                     </div>
 
                     <div class="col-md-3">
-                        {{ html()->label('Year')->for('academic_year_id') }}
+                        {{ html()->label('बर्ष')->for('academic_year_id') }}
                         <div class="form-group">
                             {{ html()->select('academic_year_id', $data['year_options'])->id('academic_year_id')->class('form-control') }}
                         </div>
                     </div>
 
                     <div class="col-md-3">
-                        {{ html()->label('Type')->for('type') }}
+                        {{ html()->label('प्रकार')->for('type') }}
                         <div class="form-group">
                             {{ html()->select('type', $data['type_options'])->id('type')->class('form-control') }}
                         </div>
@@ -53,13 +52,13 @@
                 <div id="table-wrapper" class="mx-15">
                     <table class="table table-bordered table-striped">
                         <thead>
-                            <th>S.No.</th>
-                            <th>Type</th>
-                            <th>Title</th>
-                            <th>Media</th>
-                            <th>Date</th>
-                            <th>Status</th>
-                            <th>Action</th>
+                            <th>क्र.स.</th>
+                            <th>प्रकार</th>
+                            <th>शिर्षक</th>
+                            <th>काजजात</th>
+                            <th>मिति</th>
+                            <th>स्थिति</th>
+                            <th>कार्य</th>
                         </thead>
                         <tbody>
                             @php $sno = ($galleries->currentPage()==1) ? 1 : ($galleries->currentPage()-1)*$galleries->perPage()+1 ; @endphp

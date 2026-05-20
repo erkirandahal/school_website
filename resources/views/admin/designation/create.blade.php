@@ -32,10 +32,10 @@
                 <div class="form-inline">
                     <div class="pull pull-right">
                         <div class="form-group">
-                            <button class="btn btn-success pull-right" type="submit">Create</button>
+                            <button class="btn btn-success pull-right" type="submit">पेश</button>
                         </div>
                         <div class="form-group">
-                            <a class="btn btn-danger pull-right" href="{{ route('designations.index') }}">Cancel</a>
+                            <a class="btn btn-danger pull-right" href="{{ route('designations.index') }}">रद</a>
                         </div>
                     </div>
                 </div>

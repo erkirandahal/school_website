@@ -1,8 +1,8 @@
 <fieldset class="fieldset-border">
-    <legend class="legend-border">Details</legend>
+    <legend class="legend-border">विवरण</legend>
     <div class="row px-15">
         <div class="col-md-12 form-group">
-            {{ html()->label('Title')->for('title') }} <span>*</span>
+            {{ html()->label('शिर्षक')->for('title') }} <span>*</span>
 
             {{ html()->text('title')->class('form-control')->placeholder('Title') }}
 
@@ -12,7 +12,7 @@
         </div>
 
         <div class="col-md-12 form-group">
-            {{ html()->label('Summary')->for('summary') }}
+            {{ html()->label('')->for('summary') }}
 
             {{ html()->textarea('summary')->id('summary')->class('form-control')->rows(2)->placeholder('summary goes here...') }}
 
@@ -22,7 +22,7 @@
         </div>
 
         <div class="col-md-6 form-group">
-            {{ html()->label('Year')->for('academic_year_id') }} <span>*</span>
+            {{ html()->label('बर्ष')->for('academic_year_id') }} <span>*</span>
 
             {{ html()->select('academic_year_id', $data['year_options'], $data['setting']->academic_year_id)->class('form-control') }}
 
@@ -32,7 +32,7 @@
         </div>
 
         <div class="col-md-6 form-group">
-            {{ html()->label('Type')->for('type') }} <span>*</span>
+            {{ html()->label('प्रकार')->for('type') }} <span>*</span>
 
             {{ html()->select('type', $data['type_options'], 'image')->id('gallery_type')->class('form-control') }}
 
@@ -44,7 +44,7 @@
 
         <div class="col-md-6 form-group">
             <div class="image-container">
-                {{ html()->label('Image')->for('image') }}
+                {{ html()->label('माध्यम')->for('image') }}
 
                 {{ html()->file('image[]')->id('image')->multiple() }}
 
@@ -74,10 +74,10 @@
 </fieldset>
 
 <fieldset class="fieldset-border">
-    <legend class="legend-border">Published on website</legend>
+    <legend class="legend-border">वेवसाइटमा देखाउने </legend>
     <div class="row px-15">
         <div class="col-md-6 form-groiup">
-            {{ html()->label('Publish on Website ?')->for('status') }}
+            {{ html()->label('वेवसाईटमा देखाउने हो ?')->for('status') }}
 
             {{ html()->select('status', $data['publish_options'], 0)->class('form-control') }}
 
@@ -87,7 +87,7 @@
         </div>
 
         <div class="col-md-6">
-            {{ html()->label('Publish Date')->for('date') }}
+            {{ html()->label('प्रकाशन मिति')->for('date') }}
             {{ html()->text('date')->id('published_date')->class('form-control') }}
             @error('date')
                 <span class="text-danger"><i>{{ $message }}</i></span>

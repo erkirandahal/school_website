@@ -18,21 +18,22 @@
         <!-- Default box -->
         <div class="box">
             <div class="box-header with-border">
-                <h3 class="box-title">Designations List</h3>
+                <h3 class="box-title">पदको विवरण</h3>
                 <div class="box-tools pull-right">
                     <a class="btn btn-sm btn-success" href="{{ route('designations.create') }}">
                         <i class="fa fa-plus"></i>
-                        Add Designation</a>
+                        नयाँ थप</a>
                 </div>
             </div>
             <div class="box-body">
                 <div id="replaceTable ">
                     <table class="table table-responsive table-bordered table-striped">
                         <thead>
-                            <th>S.No.</th>
-                            <th>Designation</th>
-                            <th>Order</th>
-                            <th>Actions</th>
+                            <th>क्र.स.</th>
+                            <th>पद (English)</th>
+                            <th>पद (नेपाली)</th>
+                            <th>क्रम</th>
+                            <th>कार्य</th>
                         </thead>
                         <tbody>
                             @php $sno = 1*$designations->currentPage(); @endphp
@@ -40,6 +41,7 @@
                                 <tr>
                                     <td>{{ $sno++ }}</td>
                                     <td>{{ $designation->name }}</td>
+                                    <td>{{ $designation->name_np }}</td>
                                     <td>{{ $designation->order }}</td>
 
                                     <td>

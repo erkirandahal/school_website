@@ -39,7 +39,7 @@
                                     </h2>
                                     <p data-animation="fadeInUp" data-delay=".4s">{{ $banner->tagline }}</p>
                                     <button class="theme-btn" data-animation="fadeInUp" data-delay=".6s"><span
-                                            class="btn-text">Welcome</span></button>
+                                            class="btn-text">स्वागत छ हाम्रो विद्यालयमा</span></button>
                                 </div>
                             </div>
                         </div>
@@ -54,7 +54,7 @@
                                     <h1 class="white-color f-700" data-animation="fadeInUp" data-delay=".2s">Title 1</h1>
                                     <p data-animation="fadeInUp" data-delay=".4s">Tagline 1</p>
                                     <button class="theme-btn" data-animation="fadeInUp" data-delay=".6s"><span
-                                            class="btn-text">Welcome</span></button>
+                                            class="btn-text">स्वागत छ हाम्रो विद्यालयमा</span></button>
                                 </div>
                             </div>
                         </div>
@@ -68,7 +68,7 @@
                                     <h1 class="white-color f-700" data-animation="fadeInUp" data-delay=".2s">Title 2</h1>
                                     <p data-animation="fadeInUp" data-delay=".4s">tagline 2</p>
                                     <button class="theme-btn" data-animation="fadeInUp" data-delay=".6s"><span
-                                            class="btn-text">Welcome</span></button>
+                                            class="btn-text">स्वागत छ हाम्रो विद्यालयमा</span></button>
                                 </div>
                             </div>
                         </div>

@@ -19,7 +19,7 @@
                 <h3 class="box-title">Embedding List</h3>
                 <div class="box-tools pull-right">
                     <a class="btn btn-sm btn-success" href="{{ route('embeddings.create') }}"> <i class="fa fa-plus"></i>
-                        Add New
+                        नयाँ थप
                     </a>
                 </div>
             </div>
@@ -27,12 +27,12 @@
                 <div id="table-wrapper" class="table-responsive">
                     <table class="table table-bordered table-striped">
                         <thead>
-                            <th>S.No.</th>
-                            <th>Type</th>
-                            <th>Title</th>
-                            <th>Display</th>
-                            <th>Status</th>
-                            <th>Action</th>
+                            <th>क्र.स.</th>
+                            <th>प्रकार</th>
+                            <th>शिर्षक</th>
+                            <th>विवरण (Display)</th>
+                            <th>स्थिति</th>
+                            <th>कार्य</th>
                         </thead>
                         <tbody>
                             @php $sno = ($embeddings->currentPage()==1) ? 1 : ($embeddings->currentPage()-1)*$embeddings->perPage()+1 ; @endphp

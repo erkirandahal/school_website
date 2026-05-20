@@ -16,23 +16,22 @@
         <!-- Default box -->
         <div class="box">
             <div class="box-header with-border">
-                <h3 class="box-title">Pages List</h3>
+                <h3 class="box-title">पेजहरूको विवरण</h3>
                 <div class="box-tools pull-right">
-                    <a class="btn btn-sm btn-success" href="{{ route('pages.create') }}"> <i class="fa fa-plus"></i> Add New
-                        Page
+                    <a class="btn btn-sm btn-success" href="{{ route('pages.create') }}"> <i class="fa fa-plus"></i> नयाँ पेज थप
                     </a>
                 </div>
             </div>
             <div class="box-body">
                 <div class="row filteration">
                     <div class="col-md-3">
-                        <label for="first_name"> Title </label>
+                        <label for="first_name"> पेजको विवरण </label>
                         <div class="form-group">
                             <input id="title" name="title" class="form-control" placeholder="title">
                         </div>
                     </div>
                     <div class="col-md-3">
-                        {{ html()->label('Status')->for('status') }}
+                        {{ html()->label('स्थिति')->for('status') }}
                         <div class="form-group">
                             {{ html()->select('status', $statusOptions, $setting->status)->id('status')->class('form-control') }}
                         </div>
@@ -51,13 +50,13 @@
                 <div id="table-wrapper" class="table-responsive">
                     <table class="table table-bordered table-striped">
                         <thead>
-                            <th>S.No.</th>
-                            <th>Title</th>
-                            <th>Image</th>
-                            <th>Order</th>
-                            <th>Summary</th>
-                            <th>Status</th>
-                            <th>Action</th>
+                            <th>क्र.स.</th>
+                            <th>पेजको शिर्षक</th>
+                            <th>फोटो</th>
+                            <th>क्रम</th>
+                            <th>सारंश</th>
+                            <th>स्थिति</th>
+                            <th>कार्य</th>
                         </thead>
                         <tbody>
                             @php $sno = ($pages->currentPage()==1) ? 1 : ($pages->currentPage()-1)*$pages->perPage()+1 ; @endphp

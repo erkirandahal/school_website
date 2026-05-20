@@ -14,23 +14,42 @@ class DepartmentTableSeeder extends Seeder
     public function run(): void
     {
         $departments = [
-            DepartmentEnum::ACADEMIC,
-            DepartmentEnum::ADMIN,
-            DepartmentEnum::ACCOUNT,
-            DepartmentEnum::EXAMINATION,
+            [
+                'title' => 'Academic',
+                'title_np' => 'शैक्षिक',
+                'slug' => 'academic',
+            ],
+            [
+                'title' => 'Admin',
+                'title_np' => 'प्रशासन',
+                'slug' => 'admin',
+            ],
+            [
+                'title' => 'Account',
+                'title_np' => 'लेखा',
+                'slug' => 'account',
+            ],
+            [
+                'title' => 'Examination',
+                'title_np' => 'परीक्षा',
+                'slug' => 'examination',
+            ],
         ];
 
-        // Clear existing page data
         Department::truncate();
 
-        foreach ($departments as $index => $departmentEnum) {
+        foreach ($departments as $index => $department) {
+
             Department::updateOrCreate(
                 [
-                    'title' => $departmentEnum->title(),
-                    'slug' => $departmentEnum->slug(),
+                    'slug' => $department['slug'],
+                ],
+                [
+                    'title' => $department['title'],
+                    'title_np' => $department['title_np'],
                     'order' => $index + 1,
                     'status' => true,
-                ],
+                ]
             );
         }
     }

@@ -16,10 +16,9 @@
         <!-- Default box -->
         <div class="box">
             <div class="box-header with-border">
-                <h3 class="box-title">Post List</h3>
+                <h3 class="box-title">पोष्टको विवरण</h3>
                 <div class="box-tools pull-right">
-                    <a class="btn btn-sm btn-success" href="{{ route('posts.create') }}"> <i class="fa fa-plus"></i> Add New
-                        Post</a>
+                    <a class="btn btn-sm btn-success" href="{{ route('posts.create') }}"> <i class="fa fa-plus"></i> नयाँ थप</a>
                 </div>
             </div>
             <div class="box-body">
@@ -75,14 +74,14 @@
                 <div id="table-wrapper" class="table-responsive">
                     <table class="table table-bordered table-striped">
                         <thead>
-                            <th>S.No.</th>
-                            <th>Category</th>
-                            <th>Title</th>
-                            <th>Image</th>
-                            <th>Published on</th>
-                            <th>Status</th>
-                            <th>Show on popup</th>
-                            <th>Action</th>
+                            <th>क्र.स.</th>
+                            <th>पोष्टको प्रकार</th>
+                            <th>पोष्टको शिर्षक</th>
+                            <th>फोटोहरू</th>
+                            <th>प्रकाशन मिति</th>
+                            <th>स्थिति</th>
+                            <th>पपअप</th>
+                            <th>कार्य</th>
                         </thead>
                         <tbody>
                             @php $sno = ($posts->currentPage()==1) ? 1 : ($posts->currentPage()-1)*$posts->perPage()+1 ; @endphp

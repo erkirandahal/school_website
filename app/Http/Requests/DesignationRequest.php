@@ -23,9 +23,23 @@ class DesignationRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            'name'=>($this->method()=='POST') ? 'required|unique:designations' :'required',
-            'order' => 'required|numeric'
-        ];
+        $rules = [];
+
+        if ($this->method() == 'POST') {
+
+            $rules['name'] = 'required|max:255|unique:designations,name';
+
+            $rules['name_np'] = 'required|max:255|unique:designations,name_np';
+
+        } else {
+
+            $rules['name'] = 'required|max:255|unique:designations,name,' . $this->designation;
+
+            $rules['name_np'] = 'required|max:255|unique:designations,name_np,' . $this->designation;
+        }
+
+        $rules['order'] = 'required|numeric';
+
+        return $rules;
     }
 }
